@@ -28,7 +28,11 @@ A devbox using veewee, vagrant and virtualbox
 
 ### Start
 
-	$ boxxu.sh
+	$ boxxu.sh start
+
+### Stop
+	
+	$ boxxu.sh stop
 
 ## Version Notes
 
