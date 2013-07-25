@@ -10,12 +10,29 @@ d8888b.    .d88b.    db    db   db    db   db    db
 88   8D   `8b  d8'   .8P  Y8.   .8P  Y8.   88b  d88 
 Y8888P'    `Y88P'    YP    YP   YP    YP   ~Y8888P' 
 
-
-Gentlemen, start your dev-boxes.
-
 </pre>
 
+A devbox using veewee, vagrant and virtualbox
 
+## Get started
+
+### Prereq's
+
+* bundler
+* ruby 1.9.3+
+* virtualbox
+
+### Installation 
+
+	$ build.sh
+
+### Start
+
+	$ boxxu.sh
+
+## Version Notes
+
+* 0.0.1 - based on veewee's vbox template 'ubuntu-12.10-server-amd64'
 
 
 
