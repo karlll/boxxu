@@ -51,6 +51,7 @@ Vagrant::Config.run do |config|
      chef.add_recipe "yum"
      chef.add_recipe "apt"
      chef.add_recipe "erlang"
+     chef.add_recipe "mininet"
   end
 
 end

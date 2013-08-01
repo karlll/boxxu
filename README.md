@@ -24,7 +24,7 @@ A devbox using veewee, vagrant and virtualbox
 
 ### Installation 
 
-	$ build.sh
+	$ boxxu.sh build
 
 ### Start
 

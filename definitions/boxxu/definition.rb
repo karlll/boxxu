@@ -1,3 +1,6 @@
+$LOAD_PATH << '.'
+require 'boxxu_settings.rb' 
+
 Veewee::Session.declare({
   :cpu_count => '1',
   :memory_size=> '2048',
@@ -12,16 +15,16 @@ Veewee::Session.declare({
   :boot_wait => "4",
   :boot_cmd_sequence => [
     '<Esc><Esc><Enter>',
-    '/install/vmlinuz noapic preseed/url=http://%IP%:%PORT%/preseed.cfg ',
-    'debian-installer=en_US auto locale=en_US kbd-chooser/method=us ',
+    '/install/vmlinuz noapic preseed/url=http://%IP%:%PORT%/preseed.cfg.erb ',
+    "debian-installer=#{BoxxuSettings::locale} auto locale=#{BoxxuSettings::locale} kbd-chooser/method=#{BoxxuSettings::keyboard_layout_code} ",
     'hostname=%NAME% ',
     'fb=false debconf/frontend=noninteractive ',
-    'keyboard-configuration/modelcode=SKIP keyboard-configuration/layout=us keyboard-configuration/variant=us console-setup/ask_detect=false ',
+    "keyboard-configuration/modelcode=SKIP keyboard-configuration/layout=#{BoxxuSettings::keyboard_layout_code} keyboard-configuration/variant=#{BoxxuSettings::keyboard_layout_code} console-setup/ask_detect=false ",
     'initrd=/install/initrd.gz -- <Enter>'
 ],
   :kickstart_port => "7122",
   :kickstart_timeout => "10000",
-  :kickstart_file => "preseed.cfg",
+  :kickstart_file => "preseed.cfg.erb",
   :ssh_login_timeout => "10000",
   :ssh_user => "vagrant",
   :ssh_password => "vagrant",
