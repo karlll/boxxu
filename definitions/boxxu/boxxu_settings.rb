@@ -11,7 +11,8 @@ module BoxxuSettings
     SETTINGS_FILE = "boxxu.yml"
     DEFAULTS      = { :locale => "en_US.UTF-8", 
                       :keyboard_layout_code => "us",
-                      :timezone => "UTC"
+                      :timezone => "UTC",
+                      :host_addr => "192.168.100.2"
                     }
 
     def initialize
@@ -64,6 +65,8 @@ module BoxxuSettings
           read_setting( :keyboard_layout_code, DEFAULTS[:keyboard_layout_code])
         when :timezone
           read_setting( :timezone, ENV['TZ'] || DEFAULTS[:timezone])
+        when :host_addr
+          read_setting( :host_addr, DEFAULTS[:host_addr])
         else
           ""
       end
@@ -84,6 +87,10 @@ module BoxxuSettings
 
   def BoxxuSettings.timezone()
     BoxxuSettings::SettingsFile.instance.get_value(:timezone)
+  end
+
+  def BoxxuSettings.host_addr()
+    BoxxuSettings::SettingsFile.instance.get_value(:host_addr)
   end
 
 end
