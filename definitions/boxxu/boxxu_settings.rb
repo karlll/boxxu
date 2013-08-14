@@ -12,7 +12,10 @@ module BoxxuSettings
     DEFAULTS      = { :locale => "en_US.UTF-8", 
                       :keyboard_layout_code => "us",
                       :timezone => "UTC",
-                      :host_addr => "192.168.100.2"
+                      :host_addr => "192.168.100.2",
+                      :boxxu_user => "boxxu_user",
+                      :boxxu_pw => "boxxu_user"
+
                     }
 
     def initialize
@@ -67,6 +70,10 @@ module BoxxuSettings
           read_setting( :timezone, ENV['TZ'] || DEFAULTS[:timezone])
         when :host_addr
           read_setting( :host_addr, DEFAULTS[:host_addr])
+        when :boxxu_user
+          read_setting( :boxxu_user, ENV['USER'] || DEFAULTS[:boxxu_user])
+        when :boxxu_pw
+          read_setting( :boxxu_pw, ENV['USER'] || DEFAULTS[:boxxu_pw])
         else
           ""
       end
@@ -91,6 +98,14 @@ module BoxxuSettings
 
   def BoxxuSettings.host_addr()
     BoxxuSettings::SettingsFile.instance.get_value(:host_addr)
+  end
+
+  def BoxxuSettings.boxxu_user()
+    BoxxuSettings::SettingsFile.instance.get_value(:boxxu_user)
+  end
+
+  def BoxxuSettings.boxxu_pw()
+    BoxxuSettings::SettingsFile.instance.get_value(:boxxu_pw)
   end
 
 end

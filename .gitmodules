@@ -10,3 +10,18 @@
 [submodule "cookbooks/yum"]
 	path = cookbooks/yum
 	url = https://github.com/opscode-cookbooks/yum.git
+[submodule "cookbooks/emacs"]
+	path = cookbooks/emacs
+	url = https://github.com/opscode-cookbooks/emacs.git
+[submodule "cookbooks/git"]
+	path = cookbooks/git
+	url = https://github.com/opscode-cookbooks/git.git
+[submodule "cookbooks/dmg"]
+	path = cookbooks/dmg
+	url = https://github.com/opscode-cookbooks/dmg.git
+[submodule "cookbooks/runit"]
+	path = cookbooks/runit
+	url = https://github.com/opscode-cookbooks/runit.git
+[submodule "cookbooks/windows"]
+	path = cookbooks/windows
+	url = https://github.com/opscode-cookbooks/windows

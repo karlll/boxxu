@@ -12,7 +12,14 @@ Y8888P'    `Y88P'    YP    YP   YP    YP   ~Y8888P'
 
 </pre>
 
-A devbox using veewee, vagrant and virtualbox
+A virtual development environment using veewee, vagrant and virtualbox.
+
+Currently including 
+
+ * erlang
+ * emacs
+ * git
+ * mininet (Virtual network, http://mininet.org)
 
 ## Get started
 
@@ -21,6 +28,7 @@ A devbox using veewee, vagrant and virtualbox
 * bundler
 * ruby 1.9.3+
 * virtualbox
+* vagrant 1.2.x (http://downloads.vagrantup.com)
 
 ### Installation 
 
@@ -36,7 +44,15 @@ A devbox using veewee, vagrant and virtualbox
 
 ## Version Notes
 
+* 0.0.3 - Using Berkshelf
+* 0.0.2 - Added some default recipes
 * 0.0.1 - based on veewee's vbox template 'ubuntu-12.10-server-amd64'
 
 
+## License
 
+MIT License
+
+## Credits
+
+karlll (karl@ninjacontrol.com)

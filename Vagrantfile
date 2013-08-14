@@ -1,29 +1,22 @@
 # -*- mode: ruby -*-
 # vi: set ft=ruby :
 
-$LOAD_PATH << './definitions/boxxu'
-require 'boxxu_settings.rb'
+VAGRANTFILE_API_VERSION = "2"
 
-Vagrant::Config.run do |config|
-  
-  config.vm.guest = :linux
+Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
+
   config.vm.box = "boxxu"
-  
-  config.vm.network :hostonly, BoxxuSettings::host_addr
 
-  # Share an additional folder to the guest VM. The first argument is
-  # an identifier, the second is the path on the guest to mount the
-  # folder, and the third is the path on the host to the actual folder.
-  # config.vm.share_folder "v-data", "/vagrant_data", "../data"
+  config.vm.network :private_network, ip: "192.168.33.10"
+  config.berkshelf.enabled = true
 
-   config.vm.provision :chef_solo do |chef|
-     
-     chef.node_name = "boxxu"
-     chef.add_recipe "build-essential"
-     chef.add_recipe "yum"
-     chef.add_recipe "apt"
+  config.vm.provision :chef_solo do |chef|
+
+     chef.add_recipe "git"
+     chef.add_recipe "emacs"
      chef.add_recipe "erlang"
      chef.add_recipe "mininet"
-  end
+
+ end
 
 end
